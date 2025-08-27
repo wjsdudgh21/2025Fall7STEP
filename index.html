@@ -4,442 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2025 가을 행축 7STEP 순장 가이드</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
             font-family: 'Noto Sans KR', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 10px;
+            background-color: #f3f4f6;
+            -webkit-print-color-adjust: exact;
+            color-adjust: exact;
         }
-        
-        .container {
-            max-width: 210mm;
-            height: 297mm;
-            margin: 0 auto;
+        .a4-container {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 1cm; /* 상하좌우 여백 1cm로 설정 */
+            margin: 1rem auto;
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
-            position: relative;
+            box-sizing: border-box;
         }
-        
-        .header {
-            background: linear-gradient(135deg, #ff6b6b, #ffa726);
-            color: white;
-            text-align: center;
-            padding: 25px 20px;
-            position: relative;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="25" r="1" fill="rgba(255,255,255,0.08)"/><circle cx="50" cy="50" r="1.5" fill="rgba(255,255,255,0.06)"/><circle cx="25" cy="75" r="1" fill="rgba(255,255,255,0.04)"/><circle cx="75" cy="75" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 20s infinite linear;
-            pointer-events: none;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            100% { transform: translateY(-100px); }
-        }
-        
-        .title {
-            font-size: 28px;
-            font-weight: 900;
-            margin-bottom: 8px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .subtitle {
-            font-size: 14px;
-            font-weight: 400;
-            opacity: 0.95;
-            line-height: 1.4;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .main-content {
-            padding: 10px;
-            height: calc(297mm - 90px);
-            overflow: hidden;
-        }
-        
-        .steps-container {
+        .step-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: minmax(140px, auto) minmax(140px, auto) minmax(180px, auto) minmax(140px, auto);
-            gap: 8px;
-            height: 100%;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto;
+            gap: 1rem;
         }
-        
-        .step:nth-child(5) {
-            grid-column: 1 / 3;
-            grid-row: 3;
+        .step-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            background-color: #fafafa;
         }
-        
-        .step:nth-child(6) {
-            grid-column: 1;
-            grid-row: 4;
-        }
-        
-        .step:nth-child(7) {
-            grid-column: 2;
-            grid-row: 4;
-        }
-        
-        .step {
-            background: white;
-            border-radius: 10px;
-            padding: 10px;
-            border-left: 4px solid;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .step:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        
-        .step:nth-child(1) { border-left-color: #ff6b6b; }
-        .step:nth-child(2) { border-left-color: #4ecdc4; }
-        .step:nth-child(3) { border-left-color: #45b7d1; }
-        .step:nth-child(4) { border-left-color: #96ceb4; }
-        .step:nth-child(5) { 
-            border-left-color: #ffeaa7; 
-            background: linear-gradient(135deg, #fff9e6, #fff3d6);
-            border: 3px solid #fdcb6e;
-            box-shadow: 0 8px 25px rgba(253, 203, 110, 0.3);
-        }
-        .step:nth-child(6) { border-left-color: #a29bfe; }
-        .step:nth-child(7) { border-left-color: #fd79a8; }
-        
-        .step-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-        
-        .step-number {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 12px;
-            margin-right: 8px;
-            flex-shrink: 0;
-        }
-        
-        .step:nth-child(1) .step-number { background: #ff6b6b; }
-        .step:nth-child(2) .step-number { background: #4ecdc4; }
-        .step:nth-child(3) .step-number { background: #45b7d1; }
-        .step:nth-child(4) .step-number { background: #96ceb4; }
-        .step:nth-child(5) .step-number { background: #ffeaa7; color: #333; }
-        .step:nth-child(6) .step-number { background: #a29bfe; }
-        .step:nth-child(7) .step-number { background: #fd79a8; }
-        
-        .step-title {
-            font-size: 13px;
-            font-weight: 700;
-            color: #2c3e50;
-            line-height: 1.2;
-        }
-        
-        .step-period {
-            font-size: 10px;
-            color: #7f8c8d;
-            font-weight: 500;
-            margin-top: 2px;
-        }
-        
-        .step-content {
-            font-size: 10px;
-            line-height: 1.25;
-            color: #34495e;
-            flex: 1;
-        }
-        
-        .goal {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 4px 6px;
-            border-radius: 4px;
-            margin-bottom: 5px;
-            font-weight: 500;
-            font-size: 9px;
-            line-height: 1.2;
-        }
-        
-        .goal::before {
-            content: '🎯 ';
-            font-size: 12px;
-        }
-        
-        .role-list {
-            margin: 6px 0;
-        }
-        
-        .role-item {
-            margin: 3px 0;
-            padding-left: 10px;
-            position: relative;
-        }
-        
-        .role-item::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: #3498db;
-            font-weight: bold;
-        }
-        
-        .point {
-            background: rgba(52, 152, 219, 0.1);
-            padding: 6px;
-            border-radius: 4px;
-            margin: 4px 0;
-            border-left: 3px solid #3498db;
-        }
-        
-        .point::before {
-            content: '💡 ';
-            font-weight: bold;
-        }
-        
-        .encourage {
-            background: rgba(231, 76, 60, 0.1);
-            padding: 6px;
-            border-radius: 4px;
-            margin: 4px 0;
-            border-left: 3px solid #e74c3c;
-        }
-        
-        .encourage::before {
-            content: '🤝 ';
-            font-weight: bold;
-        }
-        
-        .footer {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: white;
-            text-align: center;
-            padding: 8px;
-            font-size: 11px;
-            font-weight: 500;
-        }
-        
-        /* 반응형 조정 */
-        @media (max-height: 1000px) {
-            .step {
-                padding: 10px;
+        @media print {
+            body {
+                background-color: white;
+                margin: 0;
+                padding: 0;
             }
-            .step-content {
-                font-size: 9px;
+            .a4-container {
+                margin: 0;
+                box-shadow: none;
+                padding: 1cm; /* 인쇄 시 여백 1cm 적용 */
+                width: 100%;
+                height: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1 class="title">2025 가을 행축 7STEP 순장 가이드</h1>
-        </div>
-        
-        <div class="main-content">
-            <div class="steps-container">
-                <div class="step">
-                    <div class="step-header">
-                        <div class="step-number">1</div>
-                        <div>
-                            <div class="step-title">선포주일 & 다락방 진군식</div>
-                            <div class="step-period">9/7 ~ 9/14</div>
-                        </div>
-                    </div>
-                    <div class="step-content">
-                        <div class="goal">행축의 시작을 알리고 다락방이 하나 되어 영적 전쟁에 나아감을 결단</div>
-                        <div class="role-list">
-                            <div class="role-item">진군식 시나리오 바탕으로 진군식 인도</div>
-                            <div class="role-item">밝고 은혜로운 분위기 조성</div>
-                            <div class="role-item">진실한 마음의 고백이 되도록 격려</div>
-                            <div class="role-item">기념 촬영으로 결단의 순간 남기기</div>
-                        </div>
-                        <div class="point">선서문은 하나님 앞 약속이자 자신을 향한 다짐임을 강조</div>
-                        <div class="encourage">진군식 빠짐없이 참석, 한마음으로 기도</div>
-                    </div>
-                </div>
+    <div class="a4-container">
+        <header class="text-center border-b-2 border-gray-800 pb-2 mb-4">
+            <h1 class="text-3xl font-black text-gray-800">2025 가을 행축 7STEP 순장 가이드</h1>
+        </header>
 
-                <div class="step">
-                    <div class="step-header">
-                        <div class="step-number">2</div>
-                        <div>
-                            <div class="step-title">태신자 작정 & 대심방</div>
-                            <div class="step-period">9/8 ~ 9/28</div>
-                        </div>
-                    </div>
-                    <div class="step-content">
-                        <div class="goal">구체적인 영혼을 마음에 품고 기도로 행축의 첫걸음</div>
-                        <div class="role-list">
-                            <div class="role-item">모든 순원 참석 가능한 대심방 일정 조율</div>
-                            <div class="role-item">1인 5명 이상 태신자 기도하며 준비 안내</div>
-                            <div class="role-item">매주 태신자 기도·접촉 상황 점검</div>
-                        </div>
-                        <div class="point">태신자 작정은 명단 제출이 아닌 기도의 출발선임을 강조</div>
-                        <div class="encourage">기도하며 5명 이상 태신자 준비, 매일 이름 불러 기도</div>
-                    </div>
+        <main class="step-grid">
+            
+            <!-- STEP 1 -->
+            <div class="step-card col-span-12 md:col-span-6">
+                <h2 class="text-xl font-bold text-blue-600">STEP 1. 다락방 진군식 <span class="text-base font-normal text-gray-500">(9/7~14)</span></h2>
+                <p class="text-sm font-semibold mt-1">🎯 목표: 행축의 시작을 알리고, 공동체가 하나 되어 영적 전쟁에 나아감을 결단합니다.</p>
+                <div class="mt-2 text-sm space-y-1">
+                    <p><b class="font-bold">📝 To-Do:</b> ‘진군식 시나리오’ 따라 인도, 밝은 분위기 조성, 기념 촬영</p>
+                    <p><b class="font-bold">💡 Point:</b> 결의문이 "하나님 앞에서의 약속"임을 강조, 순장님의 열정이 중요!</p>
+                    <p><b class="font-bold">🤝 독려:</b> 진군식 필참, 함께 결단하고 기도하기</p>
                 </div>
+            </div>
 
-                <div class="step">
-                    <div class="step-header">
-                        <div class="step-number">3</div>
-                        <div>
-                            <div class="step-title">특별 기도회</div>
-                            <div class="step-period">9/29 ~ 10/25</div>
-                        </div>
-                    </div>
-                    <div class="step-content">
-                        <div class="goal">영적 전쟁임을 기억하고 기도의 능력을 의지하여 승리</div>
-                        <div class="role-list">
-                            <div class="role-item">릴레이 금식기도 안내 (9/29~10/25)</div>
-                            <div class="role-item">특별새벽기도회 독려 (10/20~10/24)</div>
-                            <div class="role-item">구체적인 기도제목 나눔 인도</div>
-                        </div>
-                        <div class="point">작은 금식 하나가 영혼을 살리는 강력한 무기가 됨을 격려</div>
-                        <div class="encourage">정해진 날짜 금식 기도, 특새 3회 이상 참석</div>
-                    </div>
+            <!-- STEP 2 -->
+            <div class="step-card col-span-12 md:col-span-6">
+                <h2 class="text-xl font-bold text-green-600">STEP 2. 태신자 작정 & 대심방 <span class="text-base font-normal text-gray-500">(9/8~28)</span></h2>
+                <p class="text-sm font-semibold mt-1">🎯 목표: 구체적인 영혼을 마음에 품고, 기도로 가장 중요한 첫걸음을 내딛습니다.</p>
+                <div class="mt-2 text-sm space-y-1">
+                    <p><b class="font-bold">📝 To-Do:</b> 전원 참석하도록 대심방 일정 조율, ‘1인 5명 이상’ 태신자 준비 사전 안내, 접촉 상황 점검</p>
+                    <p><b class="font-bold">💡 Point:</b> “작정은 명단 제출이 아닌, 기도의 출발선”임을 강조, 어려워하면 함께 기도</p>
+                    <p><b class="font-bold">🤝 독려:</b> 5명 이상 명단 준비, 작정 카드 기록 후 매일 기도</p>
                 </div>
+            </div>
 
-                <div class="step">
-                    <div class="step-header">
-                        <div class="step-number">4</div>
-                        <div>
-                            <div class="step-title">문화행축</div>
-                            <div class="step-period">10/13 ~ 10/18</div>
-                        </div>
-                    </div>
-                    <div class="step-content">
-                        <div class="goal">태신자들이 부담감 없이 즐거운 관계를 통해 마음의 문을 여는 자리</div>
-                        <div class="role-list">
-                            <div class="role-item">레트로 콘셉트, 미술관, 무비데이 등 행사 안내</div>
-                            <div class="role-item">'전도'가 아닌 '관계 맺기'가 목적임을 설명</div>
-                        </div>
-                        <div class="point">태신자 성향에 맞는 행사 참여, 함께하는 시간의 즐거움 전달</div>
-                        <div class="encourage">편하게 즐기자는 마음으로 초청, 콘셉트 복장 준비, 세심한 돌봄</div>
-                    </div>
+            <!-- STEP 3 -->
+            <div class="step-card col-span-12 md:col-span-6">
+                <h2 class="text-xl font-bold text-red-600">STEP 3. 특별 기도회 <span class="text-base font-normal text-gray-500">(9/29~10/25)</span></h2>
+                <p class="text-sm font-semibold mt-1">🎯 목표: 행축은 영적 전쟁임을 기억하고, 기도의 능력으로 승리하는 시간입니다.</p>
+                <div class="mt-2 text-sm space-y-1">
+                    <p><b class="font-bold">📝 To-Do:</b> 릴레이 금식기도(9/29-10/25) 안내, 특새(10/20-24) 독려, 구체적 기도제목 나누기</p>
+                    <p><b class="font-bold">💡 Point:</b> “작은 금식 하나가 영혼을 살리는 무기”임을 격려, 순장님이 기도의 본을 보이기</p>
+                    <p><b class="font-bold">🤝 독려:</b> 릴레이 금식 동참, 특새 3회 이상 참석</p>
                 </div>
+            </div>
 
-                <div class="step">
-                    <div class="step-header">
-                        <div class="step-number">5</div>
-                        <div>
-                            <div class="step-title" style="font-size: 16px; color: #e17055; font-weight: 900;">🌟 행복파티 (핵심 단계) 🌟</div>
-                            <div class="step-period" style="font-size: 12px;">9/29 ~ 11/1</div>
-                        </div>
-                    </div>
-                    <div class="step-content">
-                        <div class="goal" style="font-size: 12px; padding: 8px 10px;">다락방이라는 따뜻한 공동체 안에서 삶의 간증과 복음을 나누는 행축의 핵심</div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                            <div>
-                                <h4 style="color: #e17055; font-size: 12px; margin: 8px 0 5px 0; font-weight: 700;">📝 순장 To-Do</h4>
-                                <div class="role-list">
-                                    <div class="role-item" style="font-size: 11px;">장소, 시간, 프로그램, 간증 등 포함한 계획서 제출</div>
-                                    <div class="role-item" style="font-size: 11px;">환영, 진행, 간증, 복음제시 등 모든 순원 역할 분담</div>
-                                    <div class="role-item" style="font-size: 11px;">파티 감동이 초청주일로 이어지도록 자연스럽게 안내</div>
-                                </div>
-                                <h4 style="color: #00b894; font-size: 12px; margin: 8px 0 5px 0; font-weight: 700;">🤝 순원 독려</h4>
-                                <div class="encourage" style="font-size: 10px; margin-bottom: 3px;">태신자 반드시 초청</div>
-                                <div class="encourage" style="font-size: 10px; margin-bottom: 3px;">음식/간증 등 적극적으로 참여</div>
-                                <div class="encourage" style="font-size: 10px;">태신자 섬기기에 집중</div>
-                            </div>
-                            <div>
-                                <h4 style="color: #6c5ce7; font-size: 12px; margin: 8px 0 5px 0; font-weight: 700;">💡 행복파티 기준</h4>
-                                <div style="background: #f8f9ff; border: 1px solid #6c5ce7; border-radius: 6px; padding: 6px; margin-bottom: 6px;">
-                                    <div style="font-size: 10px; margin-bottom: 3px;"><strong>횟수:</strong> 제한 없음</div>
-                                    <div style="font-size: 10px; margin-bottom: 6px;"><strong>최소인원:</strong> 순장+순원1명+방문자<br><span style="font-size: 9px; color: #636e72;">(부득이한 경우 순원 2명도 가능)</span></div>
-                                    <div style="font-size: 10px; font-weight: 600; color: #e17055; margin-bottom: 3px;">📸 인증사진 필수조건:</div>
-                                    <div style="font-size: 9px; line-height: 1.2;">
-                                        <div>1) [순원들]과 [방문자] 반드시 촬영</div>
-                                        <div>2) [복음 도구] 반드시 촬영<br><span style="color: #636e72;">(휴대폰, 태블릿, 노트북, TV 등)</span></div>
-                                        <div>3) [방문자 카드] 또는 [방문 선물] 반드시 촬영</div>
-                                    </div>
-                                </div>
-                                <div style="background: #ffe8e6; border: 2px solid #ff7675; border-radius: 8px; padding: 8px; text-align: center;">
-                                    <strong style="color: #d63031; font-size: 11px;">💖 행축의 하이라이트! 💖</strong><br>
-                                    <span style="color: #636e72; font-size: 9px;">복음을 전하는 가장 중요한 순간</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- STEP 4 -->
+            <div class="step-card col-span-12 md:col-span-6">
+                <h2 class="text-xl font-bold text-yellow-600">STEP 4. 문화행축 <span class="text-base font-normal text-gray-500">(10/13~18)</span></h2>
+                <p class="text-sm font-semibold mt-1">🎯 목표: 부담 없이 즐거운 관계를 통해 태신자의 마음의 문을 여는 자리입니다.</p>
+                <div class="mt-2 text-sm space-y-1">
+                    <p><b class="font-bold">📝 To-Do:</b> 교회 주관 행사(레트로, 미술관 등) 안내, ‘전도’가 아닌 ‘관계 맺기’가 목적임을 설명</p>
+                    <p><b class="font-bold">💡 Point:</b> “오늘은 복음보다 즐거운 시간을 선물하는 날”임을 강조, 태신자 성향에 맞는 행사 참여 유도</p>
+                    <p><b class="font-bold">🤝 독려:</b> “편하게 와서 즐기자!”라며 초청, 행사 내내 태신자 돌보기</p>
                 </div>
+            </div>
 
-                <div class="step">
-                    <div class="step-header">
-                        <div class="step-number">6</div>
-                        <div>
-                            <div class="step-title">초청주일</div>
-                            <div class="step-period">11/2</div>
-                        </div>
+            <!-- STEP 5 -->
+            <div class="step-card col-span-12 border-2 border-purple-600">
+                <h2 class="text-2xl font-black text-purple-600">STEP 5. 행복파티 <span class="text-xl font-bold text-gray-500">(9/29~11/1)</span></h2>
+                <p class="text-base font-semibold mt-1">🎯 목표: 다락방이라는 따뜻한 공동체 안에서 삶의 간증과 복음을 나누는 행축의 핵심입니다.</p>
+                <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div class="space-y-2">
+                        <p><b class="font-bold">📝 순장 To-Do:</b></p>
+                        <ul class="list-disc list-inside pl-2">
+                            <li>행복파티 계획서 제출 (장소, 시간, 프로그램 등)</li>
+                            <li>모든 순원이 참여하도록 역할 분담 (환영, 진행, 간증 등)</li>
+                            <li>파티의 감동이 초청주일로 이어지도록 자연스럽게 안내</li>
+                        </ul>
+                         <p class="mt-2"><b class="font-bold">🤝 순원 독려:</b></p>
+                         <ul class="list-disc list-inside pl-2">
+                            <li>태신자 반드시 초청, 음식/간증 등 적극적 참여, 태신자 섬기기</li>
+                        </ul>
                     </div>
-                    <div class="step-content">
-                        <div class="goal">태신자가 하나님의 집에서 따뜻한 환대를 경험하고 복음의 능력을 만나는 감격의 날</div>
-                        <div class="role-list">
-                            <div class="role-item">태신자 참석 여부 최종 확인</div>
-                            <div class="role-item">예배 전후 밀착 케어 역할 부여</div>
-                            <div class="role-item">새가족 등록 및 다락방 연결 안내</div>
-                        </div>
-                        <div class="point">태신자의 교회 첫인상은 다락방의 환대에 달려 있음</div>
-                        <div class="encourage">교회 밖에서 만나 동행, 예배 중 옆자리 도움, 따뜻한 연락</div>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-header">
-                        <div class="step-number">7</div>
-                        <div>
-                            <div class="step-title">후속조치</div>
-                            <div class="step-period">11/3 ~ 12/7</div>
-                        </div>
-                    </div>
-                    <div class="step-content">
-                        <div class="goal">초청으로 끝나지 않고 한 영혼이 교회에 잘 정착할 때까지 지속적인 섬김</div>
-                        <div class="role-list">
-                            <div class="role-item">후속 접촉 상황 매주 점검</div>
-                            <div class="role-item">재초청 구체적 계획 수립</div>
-                            <div class="role-item">등록자 양육과정 연결 협력</div>
-                        </div>
-                        <div class="point">한 번의 거절에 낙심하지 않고 꾸준한 관계 유지 격려가 핵심</div>
-                        <div class="encourage">재초청 지속, 등록 권면, 새가족반 함께 참여</div>
+                    <div class="bg-purple-100 p-3 rounded-md">
+                        <p><b class="font-bold">💡 행복파티 기준:</b></p>
+                        <ul class="list-disc list-inside pl-2 space-y-1">
+                            <li>횟수 제한 없음 / 최소인원: 순장+순원1+방문자1</li>
+                            <li><b>인증사진 필수 조건:</b></li>
+                            <li class="pl-2">1) 📸 [순원+방문자]가 함께</li>
+                            <li class="pl-2">2) 📱 [복음 도구]가 함께 (폰, TV 등)</li>
+                            <li class="pl-2">3) 🎁 [방문자 카드/선물]이 함께</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <!-- STEP 6 -->
+            <div class="step-card col-span-12 md:col-span-6">
+                <h2 class="text-xl font-bold text-pink-600">STEP 6. 초청주일 <span class="text-base font-normal text-gray-500">(11/2)</span></h2>
+                <p class="text-sm font-semibold mt-1">🎯 목표: 태신자가 따뜻한 환대와 복음의 능력을 만나는 감격의 날입니다.</p>
+                <div class="mt-2 text-sm space-y-1">
+                    <p><b class="font-bold">📝 To-Do:</b> 태신자 참석 현황 확인, 환대 역할(주차, 식사 등) 부여, 새가족 등록 안내</p>
+                    <p><b class="font-bold">💡 Point:</b> “교회의 첫인상은 우리 다락방의 환대에 달려있다”고 동기 부여, 식사 자리 대화 주도</p>
+                    <p><b class="font-bold">🤝 독려:</b> 태신자와 함께 교회 오기, 예배/식사 동행, 행사 후 감사 연락</p>
+                </div>
+            </div>
+
+            <!-- STEP 7 -->
+            <div class="step-card col-span-12 md:col-span-6">
+                <h2 class="text-xl font-bold text-indigo-600">STEP 7. 후속조치 <span class="text-base font-normal text-gray-500">(11/3~12/7)</span></h2>
+                <p class="text-sm font-semibold mt-1">🎯 목표: 한 영혼이 교회에 잘 정착할 때까지 지속적인 관심과 사랑으로 섬깁니다.</p>
+                <div class="mt-2 text-sm space-y-1">
+                    <p><b class="font-bold">📝 To-Do:</b> 후속 접촉 상황 점검, 다락방 차원 재초청 계획, 등록자 관리 및 교역자와 소통</p>
+                    <p><b class="font-bold">💡 Point:</b> 한 번의 거절에 낙심하지 않도록 격려하는 것이 순장님의 가장 중요한 역할</p>
+                    <p><b class="font-bold">🤝 독려:</b> 다시 교회로 초청, 등록 권면, 새가족반 함께 참여하며 정착 돕기</p>
+                </div>
+            </div>
+
+        </main>
     </div>
 </body>
 </html>
