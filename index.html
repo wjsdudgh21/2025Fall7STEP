@@ -33,6 +33,18 @@
             padding: 0.75rem;
             background-color: #fafafa;
         }
+        .custom-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .custom-list li::before {
+            content: "•";
+            color: #4b5563;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
         @media print {
             body {
                 background-color: white;
@@ -58,18 +70,18 @@
         <main class="step-grid">
             
             <!-- STEP 1 -->
-            <div class="step-card col-span-12 md:col-span-6">
+            <div class="step-card col-span-12 md:col-span-6 border-l-4 border-blue-600">
                 <h2 class="text-xl font-bold text-blue-600">STEP 1. 다락방 진군식 <span class="text-base font-normal text-gray-500">(9/7~14)</span></h2>
                 <p class="text-sm font-semibold mt-1">🎯 목표: 행축의 시작을 알리고, 공동체가 하나 되어 영적 전쟁에 나아감을 결단합니다.</p>
                 <div class="mt-2 text-sm space-y-1">
                     <p><b class="font-bold">📝 To-Do:</b> ‘진군식 시나리오’ 따라 인도, 밝은 분위기 조성, 캐치프레이즈 영상 촬영(60초 이내)</p>
-                    <p><b class="font-bold">💡 Point:</b> 결의문이 "하나님 앞에서의 약속"임을 강조, 순장님의 열정이 중요!</p>
+                    <p><b class="font-bold">💡 Point:</b> 선서문이 "하나님 앞에서의 약속"임을 강조, 순장님의 열정이 중요!</p>
                     <p><b class="font-bold">🤝 독려:</b> 진군식 필참, 함께 결단하고 기도하기</p>
                 </div>
             </div>
 
             <!-- STEP 2 -->
-            <div class="step-card col-span-12 md:col-span-6">
+            <div class="step-card col-span-12 md:col-span-6 border-l-4 border-green-600">
                 <h2 class="text-xl font-bold text-green-600">STEP 2. 태신자 작정 & 대심방 <span class="text-base font-normal text-gray-500">(9/8~28)</span></h2>
                 <p class="text-sm font-semibold mt-1">🎯 목표: 구체적인 영혼을 마음에 품고, 기도로 가장 중요한 첫걸음을 내딛습니다.</p>
                 <div class="mt-2 text-sm space-y-1">
@@ -80,7 +92,7 @@
             </div>
 
             <!-- STEP 3 -->
-            <div class="step-card col-span-12 md:col-span-6">
+            <div class="step-card col-span-12 md:col-span-6 border-l-4 border-red-600">
                 <h2 class="text-xl font-bold text-red-600">STEP 3. 특별 기도회 <span class="text-base font-normal text-gray-500">(9/29~10/25)</span></h2>
                 <p class="text-sm font-semibold mt-1">🎯 목표: 행축은 영적 전쟁임을 기억하고, 기도의 능력으로 승리하는 시간입니다.</p>
                 <div class="mt-2 text-sm space-y-1">
@@ -91,7 +103,7 @@
             </div>
 
             <!-- STEP 4 -->
-            <div class="step-card col-span-12 md:col-span-6">
+            <div class="step-card col-span-12 md:col-span-6 border-l-4 border-yellow-600">
                 <h2 class="text-xl font-bold text-yellow-600">STEP 4. 문화행축 <span class="text-base font-normal text-gray-500">(10/13~18)</span></h2>
                 <p class="text-sm font-semibold mt-1">🎯 목표: 부담 없이 즐거운 관계를 통해 태신자의 마음의 문을 여는 자리입니다.</p>
                 <div class="mt-2 text-sm space-y-1">
@@ -108,32 +120,32 @@
                 <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                     <div class="space-y-2">
                         <p><b class="font-bold">📝 To-Do:</b></p>
-                        <ul class="list-disc list-inside pl-2">
+                        <ul class="custom-list pl-4">
                             <li>행복파티 계획서 제출 (장소, 시간, 프로그램 등)</li>
                             <li>모든 순원이 참여하도록 역할 분담 (환영, 진행, 간증, 복음 제시 등)</li>
                             <li>행복파티의 감동이 초청주일로 이어지도록 자연스럽게 안내</li>
                         </ul>
                          <p class="mt-2"><b class="font-bold">🤝 순원 독려:</b></p>
-                         <ul class="list-disc list-inside pl-2">
+                         <ul class="custom-list pl-4">
                             <li>태신자 반드시 초청, 행복파티 순서에 적극적 참여, 태신자 섬기기</li>
                         </ul>
                     </div>
-                    <div class="bg-purple-100 p-3 rounded-md">
-                        <p><b class="font-bold">💡 행복파티 기준:</b></p>
-                        <ul class="list-disc list-inside pl-2 space-y-1">
-                            <li>횟수 제한 없음</li>
-                            <li>최소인원: 순장+순원1+방문자1</li>
-                            <li><b>인증사진 필수 조건:</b></li>
+                    <div class="bg-purple-100 p-3 rounded-md text-base">
+                        <p class="font-bold">💡 행복파티 기준:</p>
+                        <div class="pl-2 space-y-2 mt-1">
+                            <p>• 횟수 제한 없음</p>
+                            <p>• 최소인원: 순장+순원1+방문자1</p>
+                            <p>• <b>인증사진 필수 조건:</b></p>
                             <p class="pl-2">1) 📸 [순장+순원+방문자]가 함께</p>
                             <p class="pl-2">2) 📱 [복음 도구]가 함께 (폰, 테블릿, TV 등)</p>
                             <p class="pl-2">3) 🎁 [방문자 카드 또는 방문선물]이 함께</p>
-                        </ul>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- STEP 6 -->
-            <div class="step-card col-span-12 md:col-span-6">
+            <div class="step-card col-span-12 md:col-span-6 border-l-4 border-pink-600">
                 <h2 class="text-xl font-bold text-pink-600">STEP 6. 초청주일 <span class="text-base font-normal text-gray-500">(11/2)</span></h2>
                 <p class="text-sm font-semibold mt-1">🎯 목표: 태신자가 따뜻한 환대와 복음의 능력을 만나는 감격의 날입니다.</p>
                 <div class="mt-2 text-sm space-y-1">
@@ -144,7 +156,7 @@
             </div>
 
             <!-- STEP 7 -->
-            <div class="step-card col-span-12 md:col-span-6">
+            <div class="step-card col-span-12 md:col-span-6 border-l-4 border-indigo-600">
                 <h2 class="text-xl font-bold text-indigo-600">STEP 7. 후속조치 <span class="text-base font-normal text-gray-500">(11/3~12/7)</span></h2>
                 <p class="text-sm font-semibold mt-1">🎯 목표: 한 영혼이 교회에 잘 정착할 때까지 지속적인 관심과 사랑으로 섬깁니다.</p>
                 <div class="mt-2 text-sm space-y-1">
